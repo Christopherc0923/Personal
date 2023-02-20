@@ -1,0 +1,34 @@
+{% extends 'main.html'%}
+
+{% load static %}
+
+
+
+{% block content %}
+<div class="container text-center">
+    <h2>IBM Presentation</h2>
+</div>
+
+<div class="container text-center">
+    <iframe src="{% static 'base/IBMppt.pdf' %}" frameborder="0" width="1100" height="670">IBM</iframe>
+</div>
+
+<hr>
+
+<div class="container">
+    <h2>Python Libraries Used</h2>
+    <ul>
+        <li>Dash</li>
+        <li>Folium</li>
+        <li>Pandas</li>
+        <li>Plotly</li>
+        <li>Seaborn</li>
+        <li>Scikit-learn</li>
+    </ul>
+</div>
+
+<hr>
+
+{% endblock %}
+
+

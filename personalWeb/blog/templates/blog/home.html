@@ -1,0 +1,29 @@
+<!-- Inheriting from main.html in the main project folder-->
+{% extends 'main.html'%}
+
+
+{% block content %}
+
+<div class="container">
+    <h1 class="text-center"> This is the blog page </h1>
+</div>
+
+<div class="container">
+<!--- Adding Project Model -->
+    {% for blog in blogs %}
+
+
+    <div class="row">
+    <hr>
+    <!-- References app name called 'blog', looks for detail and attaches the blog.id-->
+    <h2><a href = "{% url 'blog:detail' blog.id %}">{{blog.title}}</a></h2>
+    <h4>{{blog.date|date:'M d Y'}}</h4>
+    <p>{{blog.description}}</p>
+    </div>
+
+    {% endfor %}
+
+</div>
+
+<hr>
+{% endblock %}

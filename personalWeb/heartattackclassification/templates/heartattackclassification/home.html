@@ -1,0 +1,169 @@
+<!-- Inheriting from main.html in the main project folder-->
+{% extends 'main.html'%}
+
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'base/contact.css' %}">
+<div class="container" id = "top">
+    <div>
+        <h1 class="text-center">Heart Attack Prediction Form</h1>
+        <p class="text-center">Please note that the results are estimations and should not be used for diagnosis</p>
+        <button onclick="location.href='#result'">Go to Result Section</button>
+        <form class="form text-center" action="{% url 'heartattackclassification:hac_submit' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <fieldset>
+                <div class="form-group">
+                    <label>Age: 
+                        <input name="age" type="number" required>
+                    </label>
+                    
+                </div>
+                <div class="form-group">
+                    <label>Sex: 
+                        <select name="sex">
+                            <option value="">Select</option>
+                            <option value=0>0 - Female</option>
+                            <option value=1>1 - Male</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>Cp: 
+                        <select name="cp">
+                            <option value="">Select</option>
+                            <option value=1>1 - Typical angina</option>
+                            <option value=2>2 - Atypical angina</option>
+                            <option value=3>3 - Non-anginal pain</option>
+                            <option value=4>4 - Asymptomatic</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>trtbps: <input name="trtbps" type="number" required></label>
+                </div>
+            
+                
+                <div class="form-group">
+                    <label>Chol: <input name="chol" type="number" required></label>
+                </div>
+                <div class="form-group">
+                    <label>Fbs: 
+                        <select name="fbs">
+                            <option value="">Select</option>
+                            <option value=0>0 - <120mg/dl</option>
+                            <option value=1>1 - >120mg/dl</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>Restecg: 
+                        <select name="restecg">
+                            <option value="">Select</option>
+                            <option value=0>0 - Normal</option>
+                            <option value=1>1 - ST-T wave abnormality</option>
+                            <option value=2>2 - Left ventricular hypertrophy</option>
+                        </select>
+                    </label>
+                </div>
+            
+                <div class="form-group">
+                    <label>Thalachh: <input name="thalachh" type="number" required></label>
+                </div>
+                <div class="form-group">
+                    <label>Exng: 
+                        <select name="exng">
+                            <option value="">Select</option>
+                            <option value=0>0 - No</option>
+                            <option value=1>1 - Yes</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>Oldpeak: <input name="oldpeak" type="number" required></label>
+                </div>
+                <div class="form-group">
+                    <label>Slp: 
+                        <select name="slp">
+                            <option value="">Select</option>
+                            <option value=0>0 - No</option>
+                            <option value=1>1 - Yes</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>Caa: 
+                        <select name="caa">
+                            <option value="">Select</option>
+                            <option value=0>0</option>
+                            <option value=1>1</option>
+                            <option value=2>2</option>
+                            <option value=3>3</option>
+                            <option value=4>4</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>Thall: 
+                        <select name="thall">
+                            <option value="">Select</option>
+                            <option value=0>0 - Normal</option>
+                            <option value=1>1 - Fixed defect</option>
+                            <option value=2>2 - Reversable defect</option>
+                        </select>
+                    </label>
+                </div>
+            </fieldset>
+            <button id="submit">Submit</button>
+        </form>
+    </div>
+</div>
+
+<hr>
+
+<div id="result" class="container">
+    <h2 class="text-center">Previous Entries</h2>
+    <table class="table text-center">
+        <tr>
+            <th>Id</th>
+            <th>Age</th>
+            <th>Sex</th>
+            <th>CP</th>
+            <th>TRTBP</th>
+            <th>Chol</th>
+            <th>FBS</th>
+            <th>RestECG</th>
+            <th>Thalachh</th>
+            <th>Exng</th>
+            <th>Oldpeak</th>
+            <th>SLP</th>
+            <th>CAA</th>
+            <th>Thall</th>
+            <th>Output</th>
+        </tr>
+        {% for object in hac_submits %}
+            <tr>
+                <td>{{ object.id}}</td>
+                <td>{{ object.age }}</td>
+                <td>{{ object.sex }}</td>
+                <td>{{ object.cp }}</td>
+                <td>{{ object.trtbps }}</td>
+                <td>{{ object.chol }}</td>
+                <td>{{ object.fbs }}</td>
+                <td>{{ object.restecg }}</td>
+                <td>{{ object.thalachh }}</td>
+                <td>{{ object.exng }}</td>
+                <td>{{ object.oldpeak }}</td>
+                <td>{{ object.slp }}</td>
+                <td>{{ object.caa }}</td>
+                <td>{{ object.thall }}</td>
+                <td style="font-weight: bold; color: red">{{ object.output }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+</div>
+
+<button onclick="location.href='#top'">Go to Form Section</button>
+
+<hr>
+{% endblock %}

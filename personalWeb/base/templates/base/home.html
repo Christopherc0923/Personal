@@ -1,0 +1,67 @@
+<!-- Inheriting from main.html in the main project folder-->
+{% extends 'main.html'%}
+{% load static %}
+
+{% block content %}
+
+<br>
+
+<div class="container">
+    <div class="row">
+        <h1 class="text-center" style="padding: 20px;"> Welcome to my Personal Website </h1>
+        <br>
+        <div class="col-8">
+            <img src = "{% static 'base/DiscordIcon.png' %}" style="height: auto; width: 100%; object-fit: contain">
+        </div>
+        <div class="col-4">
+            <h3 class="text-center">About me</h3>
+            <p style="text-align: justify">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor augue ut nibh dictum, eget fermentum est aliquam. Fusce velit velit, condimentum vel velit eget, auctor suscipit augue. Sed at ante viverra, lobortis risus at, fermentum dolor. Sed id viverra elit, eget malesuada magna. Sed auctor, odio in tempus feugiat, odio nulla aliquet dolor, non facilisis ipsum orci eget magna. Sed non risus vitae mi feugiat commodo. Sed euismod, lorem id fringilla tempus, ante elit suscipit erat, euismod pharetra est elit.
+            </p>
+        </div>
+
+    </div>
+</div>
+
+<hr>
+
+<div class="container text-center">
+    <h2>Skills</h2>
+    {% for skill in skills %}
+        <span>{{skill.title}}{% if not forloop.last %},{% endif %}</span>
+    {% endfor %}
+
+</div>
+
+<hr>
+
+<!--- Adding Project Model -->
+<br>
+<div class="container">
+    <h2 class="text-center">Projects</h2>
+    <div class="row">
+        {% for project in projects %}
+            {% if forloop.counter0|divisibleby:3 %}
+                </div>
+                <div class="row">
+                
+            {% endif %}
+                <div class="col-4">
+                    <h3 class="text-center" style="height: 80px;">
+                        <a href = "{{project.url}}" style="text-decoration: none; color: black;">{{project.title}}</a>
+                    </h3>
+                    <a href = "{{project.url}}" style="height: 350px">
+                        <img src = "{{project.image.url}}" style="height: 300px; width: 100%; object-fit: contain">
+                    </a>
+
+                    <p style="text-align: justify; min-height: 160px;">{{project.description}}</p>
+                </div>
+        {% endfor %}
+    </div>
+</div>
+  
+
+
+<hr>
+
+{% endblock %}

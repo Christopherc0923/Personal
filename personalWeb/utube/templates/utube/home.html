@@ -1,0 +1,30 @@
+<!-- Inheriting from main.html in the main project folder-->
+{% extends 'main.html'%}
+
+{% load static %}
+
+{% block content %}
+
+<div class="contianer text-center">
+    <br>
+    <h1>Youtube Video Downloader</h1>
+    <br>
+    <form action="{% url 'utube:download_video' %}" method="get">
+        <input type="text" name="url">
+        <button type="submit">Download Video</button>
+    </form>
+</div>
+
+<h1 class="text-center">{{ status }}</h1>
+
+<div class="container">
+    <h2>List of Downloaded Videos</h2>
+    <ul style="list-style-type: none;">
+        {% for file in files %}
+            <li><a href="{% url 'utube:show_video' video_title=file %}">{{ file }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+
+
+{% endblock %}

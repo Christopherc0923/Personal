@@ -1,0 +1,38 @@
+<!-- Inheriting from main.html in the main project folder-->
+{% extends 'main.html'%}
+{% load static %}
+
+{% block content %}
+
+
+<!--- Adding Publication Model -->
+
+<div class="container">
+    <ul>
+        <li>Defining the problem statement</li>
+        <li>Collecting the data</li>
+        <li>Cleaning the data</li>
+        <li>Modeling the data</li>
+        <li>Model building</li>
+        <li>Visualizing the data</div>
+        <li>Model Deployment</li>
+    </ul>
+</div>
+
+<div class="container">
+    <h1 class="text-center">Machine Learning Projects</h1>
+    {% for m in MLs %}
+    <hr>
+    <div class="row">
+        <h2><a href = "{{m.url}}" target ="_blank">{{m.title}}</a></h2>
+        </p>{{m.description|truncatechars:500}}</p>
+        <img src = "{{m.image.url}}" style="height: 300px; object-fit: contain">
+    </div>
+
+    {% endfor %}
+</div>
+
+
+<hr>
+
+{% endblock %}

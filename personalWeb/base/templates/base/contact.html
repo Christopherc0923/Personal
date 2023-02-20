@@ -1,0 +1,47 @@
+<!-- Inheriting from main.html in the main project folder-->
+{% extends 'main.html'%}
+
+{% load static %}
+
+
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'base/contact.css' %}">
+
+<div class="container">
+    <h1 class="text-center">Contact Us</h1>
+    <p class="text-center">Please fill out the form below to contact me!</p>
+    <div class="form">
+        <form action="{% url 'base:contact_submit' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <fieldset>
+                <label>First Name: <input name="firstName" type="text" required></label>
+                <label>Last Name: <input name="lastName" type="text" required></label>
+            </fieldset>
+            <fieldset>
+                <label>Email Address: <input name="email" type="email" required></label>
+                <label>Phone Number: <input name="phone" type="tel" required></label>
+            </fieldset>
+            <fieldset>
+                <label>How did you find this website?
+                    <select name="find">
+                        <option value="">Select</option>
+                        <option value=1>LinkedIn</option>
+                        <option value=2>Resume</option>
+                        <option value=3>GitHub</option>
+                        <option value=4>Other</option>
+                    </select>
+                </label>
+                <label>Additional Infomation: <textarea name="textBox" rows="3" placeholder="If you have something you like me to know..."></textarea></label>
+                <label>Upload File: <input name="file" type="file"></label>
+            </fieldset>
+
+            <fieldset>
+                <label><input class='term' name="term" type="checkbox">I agree to the <a href=''>terms and conditions</a></label>
+            </fieldset>
+            <button id="submit">Submit</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

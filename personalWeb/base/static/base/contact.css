@@ -1,0 +1,43 @@
+/* Form Container */
+.form {
+    width: 100%; /* Set the width of the form container */
+    padding: 20px; /* Add padding to the container */
+}
+
+/* Form Fields */
+form fieldset {
+    border: 1px solid #ccc; /* Add a border around the fieldset */
+    padding: 20px; /* Add padding to the fieldset */
+    margin-bottom: 20px; /* Add margin to the bottom of the fieldset */
+}
+
+/* Form Labels */
+form label {
+    display: block; /* Display the label as a block element */
+    margin-bottom: 10px; /* Add margin to the bottom of the label */
+    font-weight: bold; /* Make the label text bold */
+}
+
+/* Form Inputs */
+form input, form select, form textarea {
+    width: 100%; /* Set the width of the input fields */
+    padding: 12px; /* Add padding to the input fields */
+    margin-bottom: 20px; /* Add margin to the bottom of the input fields */
+    border: 1px solid #ccc; /* Add a border around the input fields */
+    box-sizing: border-box; /* Include the padding and border in the total width of the input fields */
+}
+
+/* Form Submit Button */
+form button {
+    background-color: #4CAF50; /* Set the background color of the submit button */
+    color: white; /* Set the text color of the submit button */
+    padding: 12px 20px; /* Add padding to the submit button */
+    border: none; /* Remove the border from the submit button */
+    cursor: pointer; /* Change the cursor when hovering over the submit button */
+    width: 100%; /* Set the width of the submit button */
+}
+
+/* Form Checkbox */
+form .term {
+    margin-right: 10px; /* Add margin to the right of the checkbox */
+}

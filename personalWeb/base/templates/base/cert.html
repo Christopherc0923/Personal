@@ -1,0 +1,29 @@
+<!-- Inheriting from main.html in the main project folder-->
+{% extends 'main.html'%}
+{% load static %}
+
+{% block content %}
+
+
+<!--- Adding Publication Model -->
+
+<div class="container">
+    <h1 class="text-center">Certification</h1>
+    {% for c in certs %}
+    <hr>
+    <div class="row">
+        <div class="col-6">
+            <h2><a href = "{{c.url}}" target ="_blank">{{c.title}}</a></h2>
+        </div>
+        <div class="col-6">
+            <span class="float-right">{{c.date}}</span>
+        </div>
+    </div>
+
+    {% endfor %}
+</div>
+
+
+<hr>
+
+{% endblock %}
