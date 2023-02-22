@@ -38,12 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'base',
-    'blog',
-    'stock',
     'todo',
     'utube',
-    'pdf',
-    'expense',
     'heartattackclassification',
 ]
 

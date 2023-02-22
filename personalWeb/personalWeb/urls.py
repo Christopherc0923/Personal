@@ -21,12 +21,8 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('base.urls')),
-    path('blog/', include('blog.urls')),
-    path('stock/', include('stock.urls')),
     path('todo/', include('todo.urls')),
     path('utube/', include('utube.urls')),
-    path('pdf/', include('pdf.urls')),
-    path('expense/', include('expense.urls')),
     path('heartattackclassification/', include('heartattackclassification.urls')),
     
 ]
