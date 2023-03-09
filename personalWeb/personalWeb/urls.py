@@ -21,9 +21,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('base.urls')),
-    path('todo/', include('todo.urls')),
-    path('utube/', include('utube.urls')),
-    path('heartattackclassification/', include('heartattackclassification.urls')),
+
     
 ]
 

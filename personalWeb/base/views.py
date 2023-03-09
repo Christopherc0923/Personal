@@ -20,6 +20,9 @@ def contact(request):
 def resume(request):
     return render(request, 'base/resume.html')
 
+def about(request):
+    return render(request, 'base/about.html')
+
 def ibm(request):
     return render(request, 'base/IBMppt.html')
 
