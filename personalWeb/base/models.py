@@ -4,7 +4,7 @@ from django.db import models
 class Project(models.Model):
     # Django model fields
     title = models.CharField(max_length = 100)
-    description = models.CharField(max_length = 250)
+    description = models.CharField(max_length = 1000)
     image = models.ImageField(upload_to ='media/')
     url = models.URLField(blank = True)
     
@@ -19,7 +19,7 @@ class Skill(models.Model):
 
 class Publication(models.Model):
     # Django model fields
-    title = models.CharField(max_length = 250)
+    title = models.CharField(max_length = 500)
     description = models.TextField()
     image = models.ImageField(upload_to ='media/')
     url = models.URLField(blank = True)

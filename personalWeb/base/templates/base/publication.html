@@ -1,26 +1,21 @@
 <!-- Inheriting from main.html in the main project folder-->
-{% extends 'main.html'%}
-{% load static %}
-
-{% block content %}
-
+{% extends 'main.html'%} {% load static %} {% block content %}
 
 <!--- Adding Publication Model -->
 
 <div class="container">
-    <h1 class="text-center">My Publications</h1>
-    {% for p in publications %}
-    <hr>
-    <div class="row">
-        <h2><a href = "{{p.url}}" target ="_blank">{{p.title}}</a></h2>
-        </p>{{p.description|truncatechars:500}}</p>
-        <img src = "{{p.image.url}}" style="height: 300px; object-fit: contain">
-    </div>
+  <h1 class="text-center">My Publications</h1>
+  {% for p in publications %}
+  <hr />
+  <div class="row">
+    <h2><a href="{{p.url}}" target="_blank">{{p.title}}</a></h2>
+    <p style="text-indent: 2em">{{p.description|truncatechars:500}}</p>
+    <img src="{{p.image.url}}" style="height: 300px; object-fit: contain" />
+  </div>
 
-    {% endfor %}
+  {% endfor %}
 </div>
 
-
-<hr>
+<hr />
 
 {% endblock %}
