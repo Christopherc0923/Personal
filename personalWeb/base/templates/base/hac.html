@@ -1,16 +1,76 @@
 {% extends 'main.html'%} {% load static %} {% block content %}
 <div class="container text-center">
-  <h2>Heart Attack Classification App</h2>
+  <h2 style="padding: 10px; margin: 10px">Heart Attack Classification App</h2>
 </div>
 
 <hr />
 <div class="container text-center justify-content-center align-items-center">
-  <img src="{% static 'base/heart_classification_pic1.PNG' %}" />
+  <div class="container">
+    <div class="row">
+      <div class="col-7 d-flex align-items-center justify-content-center">
+        <img src="{% static 'base/EDA.PNG' %}" style="width: 100%" />
+      </div>
+      <div class="col-5">
+        <p style="text-align: justify; text-indent: 1em">
+          Exploratory data analysis (EDA) with Pandas and Seaborn libraries can
+          be used to preprocess the heart attack dataset by handling missing
+          values, outliers, and scaling features. After EDA, multiple machine
+          learning models, including logistic regression, decision trees, random
+          forests, support vector machines, and neural networks, can be trained
+          for heart attack classification. By using GridSearchCV to tune the
+          hyperparameters of these models, their performance can be optimized.
+          Additionally, a neural network model can be used to achieve high
+          accuracy by training on large amounts of data. Overall, EDA with
+          Pandas and Seaborn, followed by the use of multiple machine learning
+          models optimized with GridSearchCV and incorporating a neural network
+          model, can accurately predict heart attack risk.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <p>
+    This is a link to the EDA and ML optimization code:
+    <a
+      href="https://github.com/Christopherc0923/Mini-Projs/blob/main/Heart%20Attack%20Classification/Temp.ipynb"
+      target="_blank"
+      >Link</a
+    >
+  </p>
+
+  <hr />
+
+  <div class="container">
+    <div class="row">
+      <div
+        class="col-5 d-flex flex-column align-items-center justify-content-center"
+      >
+        <h3 style="width: 85%">
+          Are you concerned about your risk of heart attack?
+        </h3>
+        <p style="text-align: justify; text-indent: 1em; width: 85%">
+          Simply fill out our form on the right to find out. Our form allows you
+          to input various health conditions such as age, gender, blood
+          pressure, cholesterol levels, and smoking habits. Our advanced
+          algorithm uses a decision tree machine learning model to accurately
+          predict your risk of heart attack based on your individual health
+          profile. By providing personalized information based on the latest
+          scientific research, our form empowers you to take control of your
+          heart health and make informed decisions about your lifestyle and
+          medical care.
+        </p>
+      </div>
+      <div class="col-7 d-flex align-items-center justify-content-center">
+        <img src="{% static 'base/heart_classification_pic1.PNG' %}" />
+      </div>
+    </div>
+  </div>
+
   <hr />
   <img
     src="{% static 'base/heart_classification_res.PNG' %}"
     style="width: 75%"
   />
-</div>
 
-{% endblock %}
+  {% endblock %}
+</div>
