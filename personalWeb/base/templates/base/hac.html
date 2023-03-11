@@ -67,10 +67,22 @@
   </div>
 
   <hr />
-  <img
-    src="{% static 'base/heart_classification_res.PNG' %}"
-    style="width: 75%"
-  />
 
-  {% endblock %}
+  <div
+    class="container d-flex flex-column justify-content-center align-items-center text-center"
+  >
+    <h3>Results</h3>
+    <p style="text-align: justify; text-indent: 1em; width: 50%">
+      In our results section, you can see your previous form entries and their
+      estimated risk of heart attack. This allows you to track changes in your
+      health over time and take proactive steps to manage your risk. Our results
+      section is a valuable tool for staying informed and making informed
+      decisions about your heart health.
+    </p>
+    <img
+      src="{% static 'base/heart_classification_res.PNG' %}"
+      style="width: 75%"
+    />
+  </div>
 </div>
+{% endblock %}

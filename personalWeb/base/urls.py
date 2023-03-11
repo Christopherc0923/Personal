@@ -19,7 +19,7 @@ urlpatterns = [
     #path('room/', views.room, name="room"),
 
     #Change when uploading full web
-    path('todo/', views.about, name="todo"),
+    path('todo/', views.todo, name="todo"),
     path('hac/', views.hac, name="hac"),
     path('utube/', views.utube, name="utube"),
 

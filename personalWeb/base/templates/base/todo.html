@@ -3,6 +3,49 @@
   <h2>Todo Application</h2>
 </div>
 
-<div class="container text-center"></div>
 <hr />
+<div class="container text-center justify-content-center align-items-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-7 d-flex align-items-center justify-content-center">
+        <img src="{% static 'base/todoCreate.PNG' %}" style="width: 60%" />
+      </div>
+      <div class="col-5">
+        <p style="text-align: justify; text-indent: 1em">
+          Our to-do list application allows you to easily add new entries to
+          your to-do list. Simply navigate to the todo section and type in the
+          task you need to complete. Once you've added your task, you can also
+          include a due date or any additional notes or reminders. Our
+          user-friendly interface makes it simple to manage your tasks and stay
+          organized, ensuring that you never forget an important task again.
+          With our to-do list application, you can quickly and easily manage
+          your tasks and accomplish your goals.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <hr />
+
+  <div class="container">
+    <div class="row">
+      <div
+        class="col-5 d-flex flex-column align-items-center justify-content-center"
+      >
+        <p style="text-align: justify; text-indent: 1em; width: 85%">
+          After adding entries to your to-do list, you can view them in the todo
+          section of our application. From there, you can select and delete
+          individual entries using the 'Delete' button next to each task. If you
+          want to delete all tasks at once, you can use the 'Delete All' button
+          at the bottom of the list. Our application makes it simple to manage
+          and organize your to-do list, so you can focus on completing your
+          tasks and achieving your goals.
+        </p>
+      </div>
+      <div class="col-7 d-flex align-items-center justify-content-center">
+        <img src="{% static 'base/todoList.PNG' %}" style="width: 70%" />
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}
