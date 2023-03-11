@@ -26,9 +26,11 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/home">Home</a>
         </li>
+        <!--
         <li class="nav-item">
           <a class="nav-link" href="{% url 'base:about' %}">About</a>
         </li>
+        -->
         <li class="nav-item">
           <a class="nav-link" href="{% url 'base:resume' %}">Resume</a>
         </li>
@@ -40,14 +42,23 @@
             >Publication</a
           >
         </li>
+        <!-- 
         <li class="nav-item">
           <a class="nav-link" href="{% url 'base:contact' %}">Contact</a>
         </li>
+        -->
         <li class="nav-item">
           <a class="nav-link" href="{% url 'base:adminPage' %}">Admin</a>
         </li>
+
         <li class="nav-item">
-          <button id="btnSwitch">Toggle</button>
+          <button
+            id="btnSwitch"
+            class="nav-link"
+            style="background-color: grey; color: #fff; border-color: grey"
+          >
+            Toggle
+          </button>
         </li>
       </ul>
     </div>

@@ -15,8 +15,13 @@ urlpatterns = [
     path('ml/', views.mlproj, name="mlproj"),
     path('cert/', views.cert, name="cert"),
     path('home/', views.home, name="home"),
-    path('about/', views.about, name="about")
+    path('about/', views.about, name="about"),
     #path('room/', views.room, name="room"),
+
+    #Change when uploading full web
+    path('todo/', views.about, name="todo"),
+    path('hac/', views.hac, name="hac"),
+    path('utube/', views.utube, name="utube"),
 
 ]
 

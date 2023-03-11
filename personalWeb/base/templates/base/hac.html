@@ -1,0 +1,16 @@
+{% extends 'main.html'%} {% load static %} {% block content %}
+<div class="container text-center">
+  <h2>Heart Attack Classification App</h2>
+</div>
+
+<hr />
+<div class="container text-center justify-content-center align-items-center">
+  <img src="{% static 'base/heart_classification_pic1.PNG' %}" />
+  <hr />
+  <img
+    src="{% static 'base/heart_classification_res.PNG' %}"
+    style="width: 75%"
+  />
+</div>
+
+{% endblock %}

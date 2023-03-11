@@ -81,3 +81,14 @@ def contact_submit(request):
 
     # If the request is not a POST, return the form template
     return render(request, 'base/contact.html')
+
+# Delete when uploading full web
+
+def todo(request):
+    return render(request, 'base/todo.html')
+    
+def utube(request):
+    return render(request, 'base/utube.html')
+
+def hac(request):
+    return render(request, 'base/hac.html')

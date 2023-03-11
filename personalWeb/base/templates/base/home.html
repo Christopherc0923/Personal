@@ -1,6 +1,6 @@
 <!-- Inheriting from main.html in the main project folder-->
 {% extends 'main.html'%} {% load static %} {% block content %}
-
+<link rel="stylesheet" href="{% static 'base/home.css' %}" />
 <br />
 
 <div class="container">
@@ -20,12 +20,13 @@
       <p>I'm Christopher Chan</p>
       <p>Process Engineer at Intel</p>
       <p>Currently looking for an data science or developer opportunity</p>
-      <button>
-        <a href="{% url 'base:about' %}"
-          >About me <i class="fas fa-user"></i
-        ></a>
+      <button class="btn btn-outline-primary">
+        <a href="{% url 'base:about' %}">
+          About me <i class="fas fa-user"></i>
+        </a>
       </button>
-      <button>
+
+      <button class="btn btn-outline-primary">
         <a href="{% url 'base:contact' %}">Contact Me</a>
       </button>
     </div>
@@ -34,36 +35,101 @@
 
 <hr />
 
-<!--- Adding Project Model -->
+
+<!-- Legacy Project Model Display
 <br />
 <div class="container">
-  <h2 class="text-center fs-1" style="padding: 20px">Projects</h2>
+  <h2 class="text-center fs-1" style="padding: 10px">Projects</h2>
   <div class="row">
     {% for project in projects %} {% if forloop.counter0|divisibleby:3 %}
   </div>
   <div class="row">
     {% endif %}
-    <div class="col-4">
-      <h3 class="text-center" style="height: 80px">
-        <a href="{{project.url}}" style="text-decoration: none; color: black"
-          >{{project.title}}</a
-        >
-      </h3>
-      <a href="{{project.url}}" style="height: 350px">
-        <img
-          src="{{project.image.url}}"
-          style="height: 300px; width: 100%; object-fit: contain"
-        />
-      </a>
-
-      <p
-        style="text-align: justify; min-height: 160px; text-indent: 1em"
-        title="{{project.description}}"
-      >
-        {{project.description|truncatechars:250}}
-      </p>
+    <div class="col-md-4" style="padding: 10px">
+      <div class="card" style="padding: 20px">
+        <div style="min-height: 120px">
+          <h3 class="card-title text-center py-3">
+            <a
+              href="{{project.url}}"
+              style="text-decoration: none; color: black"
+              >{{project.title}}</a
+            >
+          </h3>
+        </div>
+        <a href="{{project.url}}">
+          <img
+            src="{{project.image.url}}"
+            class="card-img-top"
+            style="height: 300px; object-fit: contain"
+          />
+        </a>
+        <div class="card-body">
+          <p
+            class="card-text"
+            style="text-align: justify; min-height: 160px; text-indent: 1em"
+            title="{{project.description}}"
+          >
+            {{project.description|truncatechars:240}}
+          </p>
+        </div>
+      </div>
     </div>
     {% endfor %}
+  </div>
+</div>
+-->
+
+<!--- Adding Project Model -->
+
+<div class="container">
+  <h2 class="text-center fs-1" style="">Projects</h2>
+  <div id="myCarousel" class="carousel carousel-dark slide" data-bs-ride="carousel" style="">
+    <!-- Project Carousel -->
+    <div class="carousel-inner container justify-content-center align-items-center" style="width: 80%; padding: 20px;">
+      {% for project in projects %}
+        {% if forloop.counter0|divisibleby:2 %}
+          <div class="carousel-item {% if forloop.first %}active{% endif %}">
+            <div class="row">
+        {% endif %}
+        <div class="col-md-6" style="">
+          <div class="card" style="">
+            <div style="min-height: 120px">
+              <h3 class="card-title text-center py-3">
+                <a href="{{project.url}}" style="text-decoration: none; color: black">{{project.title}}</a>
+              </h3>
+            </div>
+            <a href="{{project.url}}">
+              <img src="{{project.image.url}}" class="card-img-top" style="height: 300px; object-fit: contain"/>
+            </a>
+            <div class="card-body">
+              <p class="card-text" style="text-align: justify; min-height: 160px; text-indent: 1em" title="{{project.description}}">
+                {{project.description|truncatechars:240}}
+              </p>
+            </div>
+          </div>
+        </div>
+        {% if forloop.last or forloop.counter0|add:1|divisibleby:2 %}
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+    <!-- Slider -->
+    <ol class="carousel-indicators" style="position: relative">
+      <li data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></li>
+      <li data-bs-target="#myCarousel" data-bs-slide-to="1"></li>
+      <li data-bs-target="#myCarousel" data-bs-slide-to="2"></li>
+    </ol>
+    
+    <!-- Buttons to move left and right -->
+    <a class="carousel-control-prev text-dark" href="#myCarousel" role="button" data-bs-slide="prev" style="width: 10%">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </a>
+    <a class="carousel-control-next text-dark" href="#myCarousel" role="button" data-bs-slide="next" style="width: 10%">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </a>
   </div>
 </div>
 
@@ -78,4 +144,6 @@
 
 <hr />
 
+
 {% endblock %}
+</div>
