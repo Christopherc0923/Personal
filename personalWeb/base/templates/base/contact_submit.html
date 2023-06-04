@@ -1,12 +1,14 @@
 <!-- Inheriting from main.html in the main project folder-->
-{% extends 'main.html'%}
-
-{% load static %}
-
-
-{% block content %}
-    <div class="container">
-        <h1 class="text-center">Contact Us</h1>
-        <p class="text-center">Thank you for reaching out! Your message has been received.</p>
-    </div>
+{% extends 'main.html'%} {% load static %} {% block content %}
+<div class="container">
+  <h1 class="text-center">Contact Us</h1>
+  <p class="text-center">
+    Thank you for reaching out! Your message has been received.
+  </p>
+  <div class="text-center">
+    <button class="btn btn-success">
+      <a class="text-reset" href="/home">Return back to homepage</a>
+    </button>
+  </div>
+</div>
 {% endblock %}

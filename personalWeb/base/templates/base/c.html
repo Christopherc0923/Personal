@@ -1,0 +1,76 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'base/contact.css' %}" />
+
+<div class="container" id="contactForm">
+  <h1 class="text-center">Contact Us</h1>
+  <p class="text-center">Please fill out the form below to contact me!</p>
+  <div class="form mx-auto" style="width: 100%">
+    <form
+      action="{% url 'base:contact_submit' %}"
+      method="post"
+      enctype="multipart/form-data"
+    >
+      {% csrf_token %}
+      <div class="row">
+        <div class="col-md-6">
+          <label
+            >First Name: <input name="firstName" type="text" required
+          /></label>
+        </div>
+        <div class="col-md-6">
+          <label
+            >Last Name: <input name="lastName" type="text" required
+          /></label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <label
+            >Email Address: <input name="email" type="email" required
+          /></label>
+        </div>
+        <div class="col-md-6">
+          <label
+            >Phone Number: <input name="phone" type="tel" required
+          /></label>
+        </div>
+      </div>
+
+      <label
+        >How did you find this website?
+        <select name="find">
+          <option value="">Select</option>
+          <option value="1">LinkedIn</option>
+          <option value="2">Resume</option>
+          <option value="3">GitHub</option>
+          <option value="4">Other</option>
+        </select>
+      </label>
+      <label
+        >Additional Infomation:
+        <textarea
+          name="textBox"
+          rows="3"
+          placeholder="If you have something you like me to know..."
+        ></textarea>
+      </label>
+      <label>Upload File: <input name="file" type="file" /></label>
+
+      <label
+        ><input class="term" name="term" type="checkbox" style="width: 5%"/>I agree to the
+        <a href="">terms and conditions</a></label
+      >
+
+      <div class="text-center">
+      <button
+        class="btn btn-success"
+        id="submit"
+        style="width: 25%"
+      >
+        Submit
+      </button>
+      <div>
+    </form>
+  </div>
+</div>

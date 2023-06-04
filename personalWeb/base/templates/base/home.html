@@ -3,23 +3,20 @@
 <link rel="stylesheet" href="{% static 'base/home.css' %}" />
 <br />
 
-<div class="container">
+<div class="container d-flex vertical-align">
   <div class="row">
-    <h1 class="text-center" style="padding: 20px">
-      Welcome to my Personal Website
-    </h1>
+    
     <br />
-    <div class="col-6">
+    <div class="col-md-6">
       <img
         src="{% static 'base/DiscordIcon.png' %}"
         style="height: auto; width: 80%; object-fit: contain"
       />
     </div>
-    <div class="col-6" style="padding: 30px">
-      <h3>Hello!</h3>
-      <p>I'm Christopher Chan</p>
-      <p>Process Engineer at Intel</p>
-      <p>Currently looking for an data science or developer opportunity</p>
+    <div class="col-md-6 " style="padding: 30px">
+      <h4>Hello, I am Christopher Chan!</h4>
+      <p style="text-align: justify;">I work at Intel as Process Engineer. I use the data generated from wafer manufacturing to create data solutions for my team!</p>
+      <p>I am looking for an opportunity in data science or software development</p>
       <button class="btn btn-outline-primary">
         <a href="{% url 'base:about' %}">
           About me <i class="fas fa-user"></i>
@@ -82,7 +79,7 @@
 <!--- Adding Project Model -->
 
 <div class="container">
-  <h2 class="text-center fs-1" style="">Projects</h2>
+  <h2 class="text-center fs-1" style="">My Projects</h2>
   <div id="myCarousel" class="carousel carousel-dark slide" data-bs-ride="carousel" style="">
     <!-- Project Carousel -->
     <div class="carousel-inner container justify-content-center align-items-center" style="width: 80%; padding: 20px;">
@@ -90,25 +87,25 @@
         {% if forloop.counter0|divisibleby:2 %}
           <div class="carousel-item {% if forloop.first %}active{% endif %}">
             <div class="row">
-        {% endif %}
-        <div class="col-md-6" style="">
-          <div class="card" style="">
-            <div style="min-height: 120px">
-              <h3 class="card-title text-center py-3">
-                <a href="{{project.url}}" style="text-decoration: none">{{project.title}}</a>
-              </h3>
-            </div>
-            <a href="{{project.url}}">
-              <img src="{{project.image.url}}" class="card-img-top" style="height: 300px; object-fit: contain"/>
-            </a>
-            <div class="card-body">
-              <p class="card-text" style="text-align: justify; min-height: 160px; text-indent: 1em" title="{{project.description}}">
-                {{project.description|truncatechars:250}}
-              </p>
-            </div>
-          </div>
-        </div>
-        {% if forloop.last or forloop.counter0|add:1|divisibleby:2 %}
+              {% endif %}
+              <div class="col-md-6 p-2" style="">
+                <div class="card" style="">
+                  <div style="min-height: 120px">
+                    <h3 class="card-title text-center py-3">
+                      <a href="{{project.url}}" style="text-decoration: none">{{project.title}}</a>
+                    </h3>
+                  </div>
+                  <a href="{{project.url}}" style="height: 300px;">
+                    <img src="{{project.image.url}}" class="card-img-top" style="height: 300px; object-fit: contain"/>
+                  </a>
+                  <div class="card-body">
+                    <p class="card-text" style="text-align: justify; min-height: 200px; text-indent: 1em" title="{{project.description}}">
+                      {{project.description|truncatechars:250}}
+                    </p>
+                  </div>
+                </div>
+              </div>
+              {% if forloop.last or forloop.counter0|add:1|divisibleby:2 %}
             </div>
           </div>
         {% endif %}
@@ -144,6 +141,10 @@
 
 <hr />
 
+{% include './c.html' %}
 
 {% endblock %}
+
+
+
 </div>

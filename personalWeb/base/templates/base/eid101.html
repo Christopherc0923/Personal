@@ -1,13 +1,69 @@
-{% extends 'main.html'%}
-
-{% load static %}
-
-
-
-{% block content %}
+{% extends 'main.html'%} {% load static %} {% block content %}
 <div class="container text-center">
-    <h2>Low Cost Diabetes Management and Diagnostic Devices for the People of Kampala, Uganda</h2>
+  <h2>
+    Low Cost Diabetes Management and Diagnostic Devices for the People of
+    Kampala, Uganda
+  </h2>
+
+  <h3>Project Objective</h3>
+
+  <hr />
+  <div class="container row">
+    <div class="col-md-6">
+      <p style="text-align: justify; text-indent: 1em">
+        The goal of the group was to tackle the growing problem of type II
+        diabetes in Kampala, Uganda by developing a low-cost and non-invasive
+        solution. To achieve this, the group created two non-invasive prototypes
+        that would be used independently for diagnosis and treatment. These
+        prototypes were designed to be affordable and accessible for individuals
+        in Kampala. By providing an innovative and cost-effective solution to a
+        pressing health issue, the group's work has the potential to positively
+        impact the health and wellbeing of many people in Kampala.
+      </p>
+    </div>
+    <div class="col-md-6">
+      <img
+        src="{% static 'base/EID101_background.PNG' %}"
+        style="width: 100%"
+      />
+    </div>
+  </div>
+  <br />
+
+  <hr />
+
+  <h3>Solutions</h3>
+  <div class="container row">
+    <div class="col-md-2 d-flex align-items-center justify-content-center">
+      <h5>Acetone Breathanalyzer</h5>
+      <p></p>
+    </div>
+    <div class="col-md-9">
+      <div class="d-flex align-items-center justify-content-center">
+        <img
+          src="{% static 'base/EID101_breathanalyzer.PNG' %}"
+          style="width: 100%"
+        />
+      </div>
+    </div>
+  </div>
+  <br />
+
+  <div class="container row">
+    <div class="col-md-9">
+      <div class="d-flex align-items-center justify-content-center">
+        <img
+          src="{% static 'base/EID101_teststrip.PNG' %}"
+          style="width: 100%"
+        />
+      </div>
+    </div>
+
+    <div class="col-md-2 d-flex align-items-center justify-content-center">
+      <h5>Urine Test Strip</h5>
+      <p></p>
+    </div>
+  </div>
+
+  {% endblock %}
 </div>
-
-
-{% endblock %}
