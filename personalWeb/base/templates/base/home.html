@@ -141,6 +141,27 @@
 
 <hr />
 
+
+<div class="container">
+  <h1>Blinking Span Example</h1>
+  <span id="blinkingSpan" class="blinking-span"></span>
+</div>
+
+<script>
+  const words = ['Word 1', 'Word 2', 'Word 3'];
+  let currentWordIndex = 0;
+  const blinkingSpan = document.getElementById('blinkingSpan');
+  
+  function updateBlinkingText() {
+    blinkingSpan.textContent = words[currentWordIndex];
+    currentWordIndex = (currentWordIndex + 1) % words.length;
+  }
+  
+  setInterval(updateBlinkingText, 2000); // Change text every 2 seconds
+</script>
+
+<hr/>
+
 {% include './c.html' %}
 
 {% endblock %}
